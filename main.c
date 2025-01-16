@@ -8,14 +8,20 @@
 #include "arrayLib.h"
 #include "matrix.h"
 
+int getMax(int* a, int n) {
+	size_t max = 0;
+	for (size_t i = 0; i < n;i++) {
+		if (a[max] < a[i]) {
+			max = i;
+		}
+	}
+	return a[max];
+}
 int main() {
 	matrix m = getMemMatrix(3, 3);
 	inputMatrix(&m);
 
-	position min = getMinValuePos(m);
-	position max = getMaxValuePos(m);
-
-	swapRows(m, min.rowIndex, max.rowIndex);
+	insertionSortRowsMatrixByRowCriteria(m, getMax);
 
 	outputMatrix(m);
 
