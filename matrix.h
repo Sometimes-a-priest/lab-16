@@ -103,7 +103,13 @@ matrix createMatrixFromArray(const int* a,
 matrix* createArrayOfMatrixFromArray(const int* values,
 	size_t nMatrices, size_t nRows, size_t nCols);
 
+// возвращает произведение матриц m1 и m2
+matrix mulMatrices(matrix m1, matrix m2);
+
 // Если данная квадратная матрица A симметрична, то заменяет A ее квадратом 
 void getSquareOfMatrixIfSymmetric(matrix* m1);
+
+// возвращает 'истина' если матрицы являются ли они взаимно обратными
+bool isMutuallyInverseMatrices(matrix m1, matrix m2);
 
 #endif

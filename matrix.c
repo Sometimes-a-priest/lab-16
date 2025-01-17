@@ -297,21 +297,41 @@ matrix* createArrayOfMatrixFromArray(const int* values,
 	return ms;
 }
 
+matrix mulMatrices(matrix m1, matrix m2) {
+
+	assert(m1.nCols == m2.nRows);
+
+	matrix m = getMemMatrixFullZero(m1.nRows, m2.nCols);
+
+	for (size_t l = 0; l < m.nCols;l++) {
+		for (size_t j = 0; j < m1.nRows;j++) {
+			for (size_t i = 0; i < m1.nCols;i++) {
+				m.values[j][l] += (m1.values[j][i] * m2.values[i][l]);
+			}
+		}
+	}
+
+	return m;
+}
+
 void getSquareOfMatrixIfSymmetric(matrix* m1) {
 	if (!isSymmetricMatrix) {
 		return 0;
 	}
 
-	matrix m = getMemMatrixFullZero(m1->nRows, m1->nRows);
-
-	for (size_t l = 0; l < m.nCols; l++) {
-		for (size_t i = 0; i < m.nRows;i++) {
-			for (size_t j = 0;j < m.nCols;j++) {
-				m.values[j][l] += (m1->values[i][l] * m1->values[j][i]);
-			}
-		}
-	}
+	matrix m = mulMatrices(*m1, *m1);
 
 	freeMemMatrix(m1);
 	(*m1) = (m);
+}
+
+bool isMutuallyInverseMatrices(matrix m1, matrix m2) {
+
+	matrix m = mulMatrices(m1, m2);
+
+	int x = isEMatrix(&m);
+
+	freeMemMatrix(&m);
+
+	return x;
 }

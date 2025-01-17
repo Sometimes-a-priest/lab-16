@@ -10,22 +10,16 @@
 
 
 int main() {
-	matrix m = getMemMatrix(3, 3);
+	matrix m = getMemMatrix(2, 2);
 	inputMatrix(&m);
 
-	long long int* array = malloc(sizeof(long long int) * m.nRows);
+	matrix m1 = getMemMatrix(2, 2);
+	inputMatrix(&m1);
 
-	for (size_t i = 0;i < m.nRows;i++) {
-		array[i] = getSum(m.values[i], m.nCols);
-	}
+	int x = isMutuallyInverseMatrices(m, m1);
 
-	qsort(array, m.nRows, sizeof(long long int), compareInts);
+	printf("%d", x);
 
-	if (isUnique(array, m.nRows)) {
-		transposeMatrix(&m);
-	}
-
-	free(array);
-	outputMatrix(m);
 	freeMemMatrix(&m);
+	freeMemMatrix(&m1);
 }
