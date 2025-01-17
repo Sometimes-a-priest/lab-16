@@ -16,6 +16,9 @@ typedef struct position {
 // Возвращает матрицу
 matrix getMemMatrix(int nRows, int nCols);
 
+// Возвращает матрицу заполненую нулями
+matrix getMemMatrixFullZero(int nRows, int nCols);
+
 // размещает в динамической памяти массив 
 // из nMatrices матриц размером nRows на nCols
 matrix* getMemArrayOfMatrices(int nMatrices,
@@ -99,5 +102,8 @@ matrix createMatrixFromArray(const int* a,
 //размещенных в динамической памяти, построенных из элементов массива a
 matrix* createArrayOfMatrixFromArray(const int* values,
 	size_t nMatrices, size_t nRows, size_t nCols);
+
+// Если данная квадратная матрица A симметрична, то заменяет A ее квадратом 
+void getSquareOfMatrixIfSymmetric(matrix* m1);
 
 #endif

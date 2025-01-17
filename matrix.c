@@ -18,6 +18,15 @@ matrix getMemMatrix(int nRows, int nCols) {
 	return (matrix) { values, nRows, nCols };
 }
 
+matrix getMemMatrixFullZero(int nRows, int nCols) {
+	int** values = (int**)malloc(sizeof(int*) * nRows);
+
+	for (int i = 0; i < nRows; i++) {
+		values[i] = (int*)calloc(nCols,sizeof(int));
+	}
+	return (matrix) { values, nRows, nCols };
+}
+
 matrix* getMemArrayOfMatrices(int nMatrices,
 	int nRows, int nCols) {
 	matrix* ms = (matrix*)malloc(sizeof(matrix) * nMatrices);
@@ -286,4 +295,23 @@ matrix* createArrayOfMatrixFromArray(const int* values,
 		}
 	}
 	return ms;
+}
+
+void getSquareOfMatrixIfSymmetric(matrix* m1) {
+	if (!isSymmetricMatrix) {
+		return 0;
+	}
+
+	matrix m = getMemMatrixFullZero(m1->nRows, m1->nRows);
+
+	for (size_t l = 0; l < m.nCols; l++) {
+		for (size_t i = 0; i < m.nRows;i++) {
+			for (size_t j = 0;j < m.nCols;j++) {
+				m.values[j][l] += (m1->values[i][l] * m1->values[j][i]);
+			}
+		}
+	}
+
+	freeMemMatrix(m1);
+	(*m1) = (m);
 }
