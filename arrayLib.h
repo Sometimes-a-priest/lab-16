@@ -2,6 +2,7 @@
 #ifndef INC_ARRAYLIB_H
 #define INC_ARRAYLIB_H
 #include < stddef.h >
+#include < stdbool.h >
 
 void swapInt(int* a, int* b);
 
@@ -44,5 +45,12 @@ void insertionSort(int* a, const size_t size);
 
 // сортировка выбором
 void selectionSort(int* a, const int size);
+
+// возвращает сумму элементов массива
+long long getSum(int* a, int n);
+
+//возвращает "истина" если в отсортированном 
+// массиве нет одинаковых значений 
+bool isUnique(long long* a, size_t n);
 
 # endif

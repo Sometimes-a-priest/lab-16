@@ -3,6 +3,7 @@
 #include < stdio.h >
 #include < limits.h >
 #include < assert.h >
+#include < stdbool.h >
 #include "arrayLib.h"
 
 
@@ -131,4 +132,24 @@ void selectionSort(int* a, const int size) {
 				minPos = j;
 		swapInt(&a[i], &a[minPos]);
 	}
+}
+
+long long getSum(int* a, int n) {
+	long long x = 0;
+
+	for (size_t i = 0;i < n;i++) {
+		x += a[i];
+	}
+
+	return x;
+}
+
+bool isUnique(long long* a, size_t n) {
+
+	for (size_t i = 0;i < n - 1;i++) {
+		if (a[i] == a[i + 1]) {
+			return 0;
+		}
+	}
+	return 1;
 }
