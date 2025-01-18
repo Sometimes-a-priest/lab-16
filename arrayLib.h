@@ -53,4 +53,10 @@ long long getSum(int* a, int n);
 // массиве нет одинаковых значений 
 bool isUnique(long long* a, size_t n);
 
-# endif
+//компоратор long long интов для кусорт
+int cmp_long_long(const void* pa, const void* pb);
+
+//возвращает количество уникальных элементов массива
+int countNUnique(long long* a, int n);
+
+#endif

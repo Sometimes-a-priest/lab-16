@@ -383,3 +383,21 @@ int getMinInArea(matrix m) {
 
 	return min;
 }
+
+
+int countEqClassesByRowsSum(matrix m) {
+	long long* a = calloc(m.nRows, sizeof(long long));
+
+	for (size_t i = 0; i < m.nRows;i++) {
+		for (size_t j = 0; j < m.nCols;j++) {
+			a[i] += m.values[i][j];
+		}
+	}
+
+	qsort(a, m.nRows, sizeof(long long), cmp_long_long);
+
+	int x = countNUnique(a, m.nRows);
+	free(a);
+
+	return x;
+}

@@ -118,4 +118,7 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m);
 
 int getMinInArea(matrix m);
 
+
+int countEqClassesByRowsSum(matrix m);
+
 #endif

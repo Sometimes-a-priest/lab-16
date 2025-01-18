@@ -10,15 +10,6 @@
 #include "arrayLib.h"
 #include "matrix.h"
 
-int getDistance(int* a, int n) {
-	int x = 0;
-
-	for (size_t i = 0; i < n;i++) {
-		x += pow(a[i],2);
-	}
-	return sqrt(x);
-}
-
 int main() {
 
 	int n, m;
@@ -27,7 +18,9 @@ int main() {
 	matrix mat = getMemMatrix(n, m);
 	inputMatrix(&mat);
 
-	insertionSortRowsMatrixByRowCriteria(mat, getDistance);
+	int x = countEqClassesByRowsSum(mat);
+
+	printf("%d", x);
 
 	outputMatrix(mat);
 

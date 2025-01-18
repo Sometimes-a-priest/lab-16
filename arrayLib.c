@@ -153,3 +153,24 @@ bool isUnique(long long* a, size_t n) {
 	}
 	return 1;
 }
+
+int cmp_long_long(const void* pa, const void* pb) {
+	long long arg1 = *(const long long*)pa;
+	long long arg2 = *(const long long*)pb;
+
+	if (arg1 < arg2) { return -1; }
+	if (arg1 > arg2) { return 1; }
+	return 0;
+}
+
+int countNUnique(long long* a, int n) {
+	int x = 1;
+
+	for (size_t i = 0; i < n - 1;i++) {
+		if (a[i] != a[i + 1]) {
+			x++;
+		}
+	}
+
+	return x;
+}
