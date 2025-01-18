@@ -115,4 +115,7 @@ bool isMutuallyInverseMatrices(matrix m1, matrix m2);
 //возвращает сумму максимальных элементов всех псевдодиагоналей матрицы
 long long findSumOfMaxesOfPseudoDiagonal(matrix m);
 
+
+int getMinInArea(matrix m);
+
 #endif

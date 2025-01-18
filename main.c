@@ -10,12 +10,12 @@
 
 
 int main() {
-	matrix m = getMemMatrix(4, 3);
+	matrix m = getMemMatrix(3, 4);
 	inputMatrix(&m);
 
-	long long int x = findSumOfMaxesOfPseudoDiagonal(m);
+	int x = getMinInArea(m);
 
-	printf("%lld", x);
+	printf("%d", x);
 
 	freeMemMatrix(&m);
 }
