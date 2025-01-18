@@ -10,16 +10,12 @@
 
 
 int main() {
-	matrix m = getMemMatrix(2, 2);
+	matrix m = getMemMatrix(4, 3);
 	inputMatrix(&m);
 
-	matrix m1 = getMemMatrix(2, 2);
-	inputMatrix(&m1);
+	long long int x = findSumOfMaxesOfPseudoDiagonal(m);
 
-	int x = isMutuallyInverseMatrices(m, m1);
-
-	printf("%d", x);
+	printf("%lld", x);
 
 	freeMemMatrix(&m);
-	freeMemMatrix(&m1);
 }

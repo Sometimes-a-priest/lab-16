@@ -112,4 +112,7 @@ void getSquareOfMatrixIfSymmetric(matrix* m1);
 // возвращает 'истина' если матрицы являются ли они взаимно обратными
 bool isMutuallyInverseMatrices(matrix m1, matrix m2);
 
+//возвращает сумму максимальных элементов всех псевдодиагоналей матрицы
+long long findSumOfMaxesOfPseudoDiagonal(matrix m);
+
 #endif
