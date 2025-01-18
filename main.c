@@ -1,3 +1,5 @@
+#define _CRT_SECURE_NO_WARNINGS
+
 #include < stdint.h >
 #include < memory.h >
 #include < stdio.h >
@@ -8,14 +10,26 @@
 #include "arrayLib.h"
 #include "matrix.h"
 
+int getDistance(int* a, int n) {
+	int x = 0;
+
+	for (size_t i = 0; i < n;i++) {
+		x += pow(a[i],2);
+	}
+	return sqrt(x);
+}
 
 int main() {
-	matrix m = getMemMatrix(3, 4);
-	inputMatrix(&m);
 
-	int x = getMinInArea(m);
+	int n, m;
+	scanf("%d %d", &n, &m);
 
-	printf("%d", x);
+	matrix mat = getMemMatrix(n, m);
+	inputMatrix(&mat);
 
-	freeMemMatrix(&m);
+	insertionSortRowsMatrixByRowCriteria(mat, getDistance);
+
+	outputMatrix(mat);
+
+	freeMemMatrix(&mat);
 }
