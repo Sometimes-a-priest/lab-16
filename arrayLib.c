@@ -177,3 +177,13 @@ int countNUnique(long long* a, int n) {
 
 	return x;
 }
+
+bool isNonDescendingSorted(int* a, int n) {
+	for (size_t i = 0; i < n - 1;i++) {
+		if (a[i] > a[i + 1]) {
+			return 0;
+		}
+	}
+
+	return 1;
+}

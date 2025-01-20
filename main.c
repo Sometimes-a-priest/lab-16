@@ -11,18 +11,13 @@
 #include "matrix.h"
 
 int main() {
+	matrix *mat = getMemArrayOfMatrices(4, 2, 2);
 
-	int n, m;
-	scanf("%d %d", &n, &m);
+	inputMatrices(mat, 4);
 
-	matrix mat = getMemMatrix(n, m);
-	inputMatrix(&mat);
-
-	int x = getNSpecialElement(mat);
+	int x = countNonDescendingRowsMatrices(mat, 4);
 
 	printf("%d", x);
 
-	outputMatrix(mat);
-
-	freeMemMatrix(&mat);
+	freeMemMatrices(mat, 4);
 }

@@ -128,4 +128,12 @@ int getNSpecialElement(matrix m);
 // в котором находится минимальный элемент матрицы
 void swapPenultimateRow(matrix m);
 
+//возвращает 'истина' если строки матрицы упорядочены по 
+// неубыванию элементов, иначе - 'ложь'
+bool hasAllNonDescendingRows(matrix m);
+
+//возвращает число матриц, 
+// строки которых упорядочены по неубыванию элементов 
+int countNonDescendingRowsMatrices(matrix* ms, int nMatrix);
+
 #endif

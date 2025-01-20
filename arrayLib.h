@@ -59,4 +59,8 @@ int cmp_long_long(const void* pa, const void* pb);
 //возвращает количество уникальных элементов массива
 int countNUnique(long long* a, int n);
 
+//возвращает 'истина' если массив упорядочен 
+// по неубыванию элементов, иначе - 'ложь'
+bool isNonDescendingSorted(int* a, int n);
+
 #endif
