@@ -17,8 +17,10 @@ int main() {
 
 	matrix mat = getMemMatrix(n, m);
 	inputMatrix(&mat);
-	
-	swapPenultimateRow(mat);
+
+	int x = getNSpecialElement(mat);
+
+	printf("%d", x);
 
 	outputMatrix(mat);
 
