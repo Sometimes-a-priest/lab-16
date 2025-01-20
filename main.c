@@ -17,10 +17,8 @@ int main() {
 
 	matrix mat = getMemMatrix(n, m);
 	inputMatrix(&mat);
-
-	int x = countEqClassesByRowsSum(mat);
-
-	printf("%d", x);
+	
+	swapPenultimateRow(mat);
 
 	outputMatrix(mat);
 

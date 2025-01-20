@@ -121,4 +121,11 @@ int getMinInArea(matrix m);
 
 int countEqClassesByRowsSum(matrix m);
 
+// возвращает количество "особых" элементов матрицы
+int getNSpecialElement(matrix m);
+
+// заменяет предпоследнюю строку матрицы первым из столбцов, 
+// в котором находится минимальный элемент матрицы
+void swapPenultimateRow(matrix m);
+
 #endif

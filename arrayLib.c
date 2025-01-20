@@ -164,6 +164,9 @@ int cmp_long_long(const void* pa, const void* pb) {
 }
 
 int countNUnique(long long* a, int n) {
+	if (n == 0) {
+		return 0;
+	}
 	int x = 1;
 
 	for (size_t i = 0; i < n - 1;i++) {

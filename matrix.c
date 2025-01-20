@@ -342,7 +342,8 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
 
 	for (size_t l = 1; l < m.nCols;l++) {
 		int max = m.values[0][l];
-		for (size_t i = 0, j = l; i < m.nRows && j < m.nCols;i++, j++) {
+		for (size_t i = 0, j = l; i < m.nRows && j < m.nCols;i++, j++)
+		{
 			if (max < m.values[i][j]) {
 				max = m.values[i][j];
 			}
@@ -352,7 +353,8 @@ long long findSumOfMaxesOfPseudoDiagonal(matrix m) {
 
 	for (size_t l = 1; l < m.nRows;l++) {
 		int max = m.values[l][0];
-		for (size_t i = l, j = 0; i < m.nRows && j < m.nCols;i++, j++) {
+		for (size_t i = l, j = 0; i < m.nRows && j < m.nCols;i++, j++)
+		{
 			if (max < m.values[i][j]) {
 				max = m.values[i][j];
 			}
@@ -400,4 +402,43 @@ int countEqClassesByRowsSum(matrix m) {
 	free(a);
 
 	return x;
+}
+
+int getNSpecialElement(matrix m) {
+	int special = 0;
+
+	for (size_t i = 0;i < m.nCols;i++) {
+		int x = 0;
+		int max = m.values[0][i];
+		for (size_t j = 0; j < m.nRows;j++) {
+			x += m.values[j][i];
+			if (max < m.values[j][i]) {
+				max = m.values[j][i];
+			}
+		}
+		if (x - max < max) {
+			special++;
+		}
+	}
+
+	return special;
+}
+
+void swapPenultimateRow(matrix m) {
+	if (m.nRows < 2) {
+		return;
+	}
+
+	int* a = malloc(sizeof(int) * m.nRows);
+	position minP = getMinValuePos(m);
+
+	for (size_t i = 0; i < m.nRows;i++) {
+		a[i] = m.values[i][minP.colIndex];
+	}
+
+	for (size_t i = 0; i < m.nCols;i++) {
+		m.values[m.nRows - 2][i] = a[i];
+	}
+
+	free(a);
 }
