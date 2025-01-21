@@ -187,3 +187,24 @@ bool isNonDescendingSorted(int* a, int n) {
 
 	return 1;
 }
+
+int reversCompareInts(const void* a, const void* b) {
+	int arg1 = *(const int*)a;
+	int arg2 = *(const int*)b;
+
+	if (arg1 < arg2) { return 1; }
+	if (arg1 > arg2) { return -1; }
+	return 0;
+}
+
+
+int getMax(const int* a, const size_t n) {
+	int max = a[0];
+	for (size_t i = 0; i < n;i++) {
+		if (max < a[i]) {
+			max = a[i];
+		}
+	}
+
+	return max;
+}

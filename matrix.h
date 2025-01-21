@@ -136,4 +136,9 @@ bool hasAllNonDescendingRows(matrix m);
 // строки которых упорядочены по неубыванию элементов 
 int countNonDescendingRowsMatrices(matrix* ms, int nMatrix);
 
+//возвращает количество нулевых строк в матрице
+int countZeroRows(matrix m);
+
+//выводит матрицы, имеющие наибольшее число нулевых строк
+void printMatrixWithMaxZeroRows(matrix* ms, int nMatrix);
 #endif

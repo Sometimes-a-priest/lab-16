@@ -462,3 +462,36 @@ int countNonDescendingRowsMatrices(matrix* ms, int nMatrix) {
 
 	return x;
 }
+
+int countZeroRows(matrix m) {
+	int x = 0;
+
+	for (size_t i = 0;i < m.nRows;i++) {
+		if (getSum(m.values[i], m.nCols) == 0) {
+			x++;
+		}
+	}
+
+	return x;
+}
+
+void printMatrixWithMaxZeroRows(matrix* ms, int nMatrix) {
+
+	int maxZero;
+
+	int* a = malloc(sizeof(int) * nMatrix);
+
+	for (size_t i = 0;i < nMatrix;i++) {
+		a[i] = countZeroRows(ms[i]);
+	}
+
+	maxZero = getMax(a, nMatrix);
+
+	for (size_t i = 0;i < nMatrix;i++) {
+		if (a[i] == maxZero) {
+			outputMatrix(ms[i]);
+		}
+	}
+
+	free(a);
+}

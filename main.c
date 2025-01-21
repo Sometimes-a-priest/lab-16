@@ -15,9 +15,7 @@ int main() {
 
 	inputMatrices(mat, 4);
 
-	int x = countNonDescendingRowsMatrices(mat, 4);
-
-	printf("%d", x);
+	printMatrixWithMaxZeroRows(mat, 4);
 
 	freeMemMatrices(mat, 4);
 }

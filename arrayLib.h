@@ -63,4 +63,10 @@ int countNUnique(long long* a, int n);
 // по неубыванию элементов, иначе - 'ложь'
 bool isNonDescendingSorted(int* a, int n);
 
+//компоратор для кусорт сортирует по невозростанию
+int reversCompareInts(const void* a, const void* b);
+
+// возвращает максимальное значение из массива 
+int getMax(const int* a, const size_t n);
+
 #endif
