@@ -4,6 +4,7 @@
 #include < limits.h >
 #include < assert.h >
 #include < stdbool.h >
+#include < math.h >
 #include "arrayLib.h"
 
 
@@ -207,4 +208,26 @@ int getMax(const int* a, const size_t n) {
 	}
 
 	return max;
+}
+
+int getAbsolutMax(int* a, const size_t n) {
+	int max = abs(a[0]);
+	for (size_t i = 0; i < n;i++) {
+		if (max < abs(a[i])) {
+			max = abs(a[i]);
+		}
+	}
+
+	return max;
+}
+
+int getMin(const int* a, const size_t n) {
+	int min = a[0];
+	for (size_t i = 0; i < n;i++) {
+		if (min > a[i]) {
+			min = a[i];
+		}
+	}
+
+	return min;
 }

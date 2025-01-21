@@ -15,7 +15,7 @@ int main() {
 
 	inputMatrices(mat, 4);
 
-	printMatrixWithMaxZeroRows(mat, 4);
+	printMatrixWithMinNormals(mat, 4);
 
 	freeMemMatrices(mat, 4);
 }

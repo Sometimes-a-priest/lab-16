@@ -69,4 +69,10 @@ int reversCompareInts(const void* a, const void* b);
 // возвращает максимальное значение из массива 
 int getMax(const int* a, const size_t n);
 
+// возвращает максимальное абсолютное значение из массива 
+int getAbsolutMax(const int* a, const size_t n);
+
+//возвращает минимальное значение из массива 
+int getMin(const int* a, const size_t n);
+
 #endif

@@ -495,3 +495,36 @@ void printMatrixWithMaxZeroRows(matrix* ms, int nMatrix) {
 
 	free(a);
 }
+
+int getMaxAbsolutInMatrix(matrix m) {
+	int max = 0;
+	int x;
+
+	for (size_t i = 0;i < m.nRows;i++) {
+		x = getAbsolutMax(m.values[i], m.nCols);
+
+		if (x > max) {
+			max = x;
+		}
+	}
+
+	return max;
+}
+
+void printMatrixWithMinNormals(matrix* ms, int nMatrix) {
+	int* a = malloc(sizeof(int) * nMatrix);
+	int min;
+
+	for (size_t i = 0; i < nMatrix;i++) {
+		a[i] = getMaxAbsolutInMatrix(ms[i]);
+	}
+
+	min = getMin(a, nMatrix);
+
+	for (size_t i = 0;i < nMatrix;i++) {
+		if (a[i] == min) {
+			outputMatrix(ms[i]);
+		}
+	}
+	free(a);
+}

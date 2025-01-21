@@ -141,4 +141,10 @@ int countZeroRows(matrix m);
 
 //выводит матрицы, имеющие наибольшее число нулевых строк
 void printMatrixWithMaxZeroRows(matrix* ms, int nMatrix);
+
+//возвращает максимальное абсолютное значение зт матрицы m
+int getMaxAbsolutInMatrix(matrix m);
+
+//выводит матрицы с наименьшей нормой
+void printMatrixWithMinNormals(matrix* ms, int nMatrix);
 #endif
